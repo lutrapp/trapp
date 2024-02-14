@@ -1,12 +1,12 @@
 -- Customers table
-CREATE TABLE customer (
+CREATE TABLE IF NOT EXISTS customer (
     customerId SERIAL PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL
 );
 
 -- Sales table
-CREATE TABLE sale (
+CREATE TABLE IF NOT EXISTS sale (
     saleId SERIAL PRIMARY KEY,
     customerId INT,
     saleDate DATE,
@@ -15,7 +15,7 @@ CREATE TABLE sale (
 );
 
 -- SaleItems table
-CREATE TABLE saleItems (
+CREATE TABLE IF NOT EXISTS saleItems (
     saleId INT,
     productID INT,
     quantity INT,
@@ -26,7 +26,7 @@ CREATE TABLE saleItems (
 );
 
 -- EmailNotifications table
-CREATE TABLE EmailNotifications (
+CREATE TABLE IF NOT EXISTS emailNotifications (
     notificationId SERIAL PRIMARY KEY,
     customerId INT,
     sentDate DATE,
