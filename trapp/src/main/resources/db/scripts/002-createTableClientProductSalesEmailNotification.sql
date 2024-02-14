@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS saleItems (
 );
 
 -- EmailNotifications table
-CREATE TABLE IF NOT EXISTS EmailNotifications (
+CREATE TABLE IF NOT EXISTS emailNotifications (
     notificationId SERIAL PRIMARY KEY,
     customerId INT,
     sentDate DATE,
