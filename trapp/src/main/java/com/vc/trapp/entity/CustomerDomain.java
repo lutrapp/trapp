@@ -11,25 +11,17 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "product")
-public class ProductDomain {
+@Table(name = "customer")
+public class CustomerDomain {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "productId")
-    private Long productId;
+    @Column(name = "customerId")
+    private Long customerId;
 
     @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "price", nullable = false)
-    private Double price;
-
-    @Column(name = "description")
-    private String description;
-
-    @Column(name = "stock", nullable = false)
-    private Integer stock;
-
+    @Column(name = "email", nullable = false)
+    private String email;
 }
-
