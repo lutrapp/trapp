@@ -1,0 +1,12 @@
+ ________   ______       ____     _____    _____
+(___  ___) (   __ \     (    )   (  __ \  (  __ \
+    ) )     ) (__) )    / /\ \    ) )_) )  ) )_) )
+   ( (     (    __/    ( (__) )  (  ___/  (  ___/
+    ) )     ) \ \  _    )    (    ) )      ) )
+   ( (     ( ( \ \_))  /  /\  \  ( (      ( (
+   /__\     )_) \__/  /__(  )__\ /__\     /__\
+
+${application.title} ${application.version}
+APP:${spring.application.title}
+LOG:${logging.level.root}
+Powered by Spring Boot ${spring-boot.version}
