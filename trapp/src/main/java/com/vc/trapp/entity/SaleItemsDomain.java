@@ -1,10 +1,7 @@
 package com.vc.trapp.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.math.BigDecimal;
 
@@ -15,6 +12,12 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @Table(name = "saleItems")
 public class SaleItemsDomain {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "saleItemsId")
+    @Setter(AccessLevel.NONE)
+    private Long saleItemsId;
 
     @ManyToOne
     @JoinColumn(name = "saleId")

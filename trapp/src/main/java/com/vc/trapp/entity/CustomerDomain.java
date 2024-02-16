@@ -1,10 +1,7 @@
 package com.vc.trapp.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Getter
@@ -17,6 +14,7 @@ public class CustomerDomain {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "customerId")
+    @Setter(AccessLevel.NONE)
     private Long customerId;
 
     @Column(name = "name", nullable = false)
