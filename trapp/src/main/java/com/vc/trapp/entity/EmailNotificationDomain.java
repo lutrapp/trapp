@@ -1,10 +1,8 @@
 package com.vc.trapp.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+
 import java.util.Date;
 
 @Entity
@@ -18,6 +16,7 @@ public class EmailNotificationDomain {
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
 @Column(name = "notificationId")
+@Setter(AccessLevel.NONE)
 private Long notificationId;
 
 @ManyToOne
