@@ -11,6 +11,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "product")
+@Builder
 public class ProductDomain {
 
     @Id
