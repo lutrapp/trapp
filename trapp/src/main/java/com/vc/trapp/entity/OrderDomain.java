@@ -1,10 +1,7 @@
 package com.vc.trapp.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.Date;
 
@@ -19,6 +16,7 @@ public class OrderDomain {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "orderId")
+    @Setter(AccessLevel.NONE)
     private Long orderId;
 
     @Column(name = "orderDate", nullable = false)

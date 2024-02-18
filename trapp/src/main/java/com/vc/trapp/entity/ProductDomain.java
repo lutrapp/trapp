@@ -2,10 +2,8 @@ package com.vc.trapp.entity;
 
 import jakarta.persistence.*;
 import java.math.BigDecimal;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+
+import lombok.*;
 
 @Entity
 @Getter
@@ -18,6 +16,7 @@ public class ProductDomain {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "productId")
+    @Setter(AccessLevel.NONE)
     private Long productId;
 
     @Column(name = "name", nullable = false)
