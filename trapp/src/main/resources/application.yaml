@@ -1,0 +1,36 @@
+# Configurações gerais do aplicativo
+spring:
+  application:
+    name: ${APP_NAME:trapp}
+  profiles:
+    active: ${SPRING_ACTIVE_PROFILE:local}
+  banner:
+    location: banner.txt
+  liquibase:
+    enabled: true
+    change-log: classpath:/db/changelog/db-master.xml
+  datasource:
+    url: ${DATASOURCE_URL:jdbc:postgresql://localhost:5435/shop}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}
+
+# Configurações do servidor embutido
+server:
+  port: ${SERVER_PORT:8080}
+  servlet:
+    context-path: /trapp/v1
+
+# Configurações do banco de dados
+
+
+# Configurações do Hibernate
+jpa:
+  database: postgresql
+  show-sql: true
+  hibernate:
+    ddl-auto: validate
+
+# Configurações do logging
+logging:
+  level:
+    root: ${LOG_LEVEL_ROOT:info}
