@@ -16,7 +16,7 @@ public class ProductDomain {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "productId")
+    @Column(name = "productid")
     @Setter(AccessLevel.NONE)
     private Long productId;
 
