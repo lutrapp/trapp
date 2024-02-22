@@ -15,6 +15,7 @@ public class ProductServiceImpl  implements ProductService {
     public ProductServiceImpl(ProductRepository productRepository) {
         this.productRepository = productRepository;
     }
+
     public Product createProduct(Product product){
         ProductDomain productDomain = ProductDomain.builder()
                 .productId(product.productId()) //TODO VERIFICAR
@@ -25,7 +26,7 @@ public class ProductServiceImpl  implements ProductService {
                 .build();
 
         ProductDomain productCreated = productRepository.save(productDomain);
-        return new Product(productCreated.getProductId(), productCreated.getName(), productCreated.getPrice(), productCreated.getDescription(), productCreated.getStock());
+        return mapProductDomainToProduct(productCreated);
     }
 
     @Override
@@ -34,6 +35,21 @@ public class ProductServiceImpl  implements ProductService {
         return productDomainOptional.map(productDomain ->
                 new Product(productDomain.getProductId(), productDomain.getName(), productDomain.getPrice(), productDomain.getDescription(), productDomain.getStock()));
 
+    }
+
+    public Product getRandomProduct() {
+        ProductDomain randomProduct = productRepository.findRandomProduct();
+        return mapProductDomainToProduct(randomProduct);
+    }
+
+    private Product mapProductDomainToProduct(ProductDomain product) {
+        return new Product(
+                product.getProductId(),
+                product.getName(),
+                product.getPrice(),
+                product.getDescription(),
+                product.getStock()
+        );
     }
 
 }
