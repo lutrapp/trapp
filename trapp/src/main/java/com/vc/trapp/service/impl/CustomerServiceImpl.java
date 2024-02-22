@@ -23,10 +23,11 @@ public class CustomerServiceImpl implements CustomerService {
                 .customerId(customer.customerId())
                 .email(customer.email())
                 .name(customer.name())
+                .cpf(customer.cpf())
                 .build();
 
         CustomerDomain customerCreated = customerRepository.save(customerDomain);
-        return  new Customer(customerCreated.getCustomerId(), customerCreated.getName(), customerCreated.getEmail());
+        return  new Customer(customerCreated.getCustomerId(), customerCreated.getName(), customerCreated.getEmail(), customerCreated.getCpf());
     }
 
     @Override

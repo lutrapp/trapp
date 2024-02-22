@@ -23,4 +23,7 @@ public class CustomerDomain {
 
     @Column(name = "email", nullable = false)
     private String email;
+
+    @Column(name = "cpf", nullable = false)
+    private String cpf;
 }
