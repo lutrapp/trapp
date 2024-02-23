@@ -39,3 +39,12 @@ jpa:
 logging:
   level:
     root: ${LOG_LEVEL_ROOT:info}
+
+management:
+  metrics:
+    tags:
+      application: trapp
+  endpoints:
+    web:
+      exposure:
+        include: prometheus, health, info, metric
