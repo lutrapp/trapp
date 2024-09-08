@@ -6,34 +6,12 @@ spring:
     active: ${SPRING_ACTIVE_PROFILE:local}
   banner:
     location: banner.txt
-  liquibase:
-    enabled: true
-    change-log: classpath:/db/changelog/db-master.xml
-  datasource:
-    url: ${DATASOURCE_URL:jdbc:postgresql://localhost:5435/shop}
-    username: ${DB_USERNAME:postgres}
-    password: ${DB_PASSWORD:postgres}
-  rabbitmq:
-    host: ${RABBIT_HOST:localhost}
-    port: ${RABBIT_PORT:5672}
-    username: ${RABBIT_USER:guest}
-    password: ${RABBIT_PASS:guest}
 
 # Configurações do servidor embutido
 server:
   port: ${SERVER_PORT:8080}
   servlet:
     context-path: /trapp/v1
-
-# Configurações do banco de dados
-
-
-# Configurações do Hibernate
-jpa:
-  database: postgresql
-  show-sql: true
-  hibernate:
-    ddl-auto: validate
 
 # Configurações do logging
 logging:
@@ -47,4 +25,4 @@ management:
   endpoints:
     web:
       exposure:
-        include: prometheus, health, info, metric
+        include: health, info
