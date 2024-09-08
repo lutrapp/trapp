@@ -55,7 +55,7 @@ public class ClientService {
         var response = httpClient.send(request, HttpResponse.BodyHandlers.ofInputStream());
 
         if(response.statusCode() != 200){
-            throw new RuntimeException("Falha ao obter a imagem. Código de status: " + response.statusCode());
+            throw new RuntimeException("Falha ao obter a imagem. Verifique se enviou um statusCode válido.");
         }
 
         try (InputStream inputStream = response.body()) {
